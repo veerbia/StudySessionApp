@@ -26,7 +26,7 @@ public class SessionList {
         for (Session s : listOfSession) {
             if (s.getMastery().equals("mastered")) {
                 mastered++;
-            } else if (s.getMastery().equals("unmastered")) {
+            } else {
                 unmastered++;
             }
         }
