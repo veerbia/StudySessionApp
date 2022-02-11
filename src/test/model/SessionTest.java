@@ -13,7 +13,9 @@ class SessionTest {
     private Session testSession5;
     private Session testSession6;
     private Session testSession7;
-
+    private Session testSession8;
+    private Session testSession9;
+    private Session testSession10;
 
     @BeforeEach
     void runBefore(){
@@ -31,6 +33,12 @@ class SessionTest {
                 10, 1903, 1906, "mastered");
         testSession7 = new Session("Math", "Logs", "Practice 4", 100,
                 100, 2000, 2059, "unmastered");
+        testSession8 = new Session("Math", "Logs", "Practice 4", 100,
+                100, 1159, 1159, "unmastered");
+        testSession9 = new Session("Math", "Logs", "Practice 4", 100,
+                100, 1759, 1759, "unmastered");
+        testSession10 = new Session("Math", "Logs", "Practice 4", 100,
+                100, 1959, 1959, "unmastered");
     }
 
     @Test
@@ -48,6 +56,7 @@ class SessionTest {
     @Test
     void testTimeOfDayMorningBoundary() {
         assertEquals("Morning", testSession2.timeOfDay());
+        assertEquals("Morning", testSession8.timeOfDay());
     }
 
     @Test
@@ -58,6 +67,7 @@ class SessionTest {
     @Test
     void testTimeOfDayAfternoonBoundary() {
         assertEquals("Afternoon", testSession4.timeOfDay());
+        assertEquals("Afternoon", testSession9.timeOfDay());
     }
 
     @Test
@@ -68,6 +78,7 @@ class SessionTest {
     @Test
     void testTimeOfDayEveningBoundary() {
         assertEquals("Evening", testSession5.timeOfDay());
+        assertEquals("Evening", testSession10.timeOfDay());
     }
 
     @Test

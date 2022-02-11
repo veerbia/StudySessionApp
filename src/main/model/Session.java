@@ -44,7 +44,7 @@ public class Session {
         this.mastery = mastery;
     }
 
-    // EFFECTS: gives label for time of day based on time of session
+    // EFFECTS: gives label for time of day based on time of session in HHMM format
     public String timeOfDay() {
         if (timeStarted >= morningStart && timeStarted <= morningEnd) {
             return "Morning";
