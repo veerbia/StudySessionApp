@@ -1,28 +1,30 @@
 # Veer's Project - Study Session App
 
 ### Background
-Everyday millions of people around the world lose someone they love dearly.
-Along with that person we lose a wealth of stories, from early life to adulthood, to their
-personal history, successes, failures, controversies, and unique perspectives on the world at large. 
+As university students, studying is integral to our success. As such, it must be that we keenly  
+keep track of our study sessions, including factors such as their length, efficiency, and time,
+in order to consistently keep track of our study habits. The study habits that we build in the early
+years of university form the basis of how we learn for the rest of our lives, and thus, we should 
+see that the foundation is built strong through rigorous tracking of key metrics, resources for posterity
+and optimize our time accordingly.
 
-I want to create software that will allow my family and friends to 
-document, read, and own their personal history; archiving each page for posterity, 
-and more specifically, the benefit of subsequent generations.
+I want to create software that will allow me and my university classmates to 
+document each one of their study sessions and keep a log of all of their sessions with key information
+about each one.
 
 ### Project Information
 
-This project will be a Java GUI where a user can create their own personal wiki article.
-Each article will be generated using user-specific responses to a series of generated prompts and 
-users may write to their preferred length for each. If anything changes, these topics along with personal
-information will be editable. After they are satisfied, they can read their own page with the completed sections.
-In the future, I would like to add the option to add additional profiles, create new sections, and enable 
-the possibility to search for these loved ones' profiles to learn more about them through the lens of 
-their personal Wiki.
+This project will be a Java GUI where a user can create their own personal study session log.
+Each session will be filled out using user-specific responses to a series of generated prompts regarding
+details such as topic of study, start and end times, resources used as well as if they feel they've mastered
+the material. They can then view all their previous sessions inclusive as well as see their personal efficiency in each 
+session, and their overall mastery rate. Once they are satisfied in adding new sessions, they can view a complete
+summarized history of their sessions in hierarchical order. 
 
 
 ### *User Stories*
 
-- As a user, I want to be able to add information to each section in my Personal Wiki page
-- As a user, I want to be able to edit my article entries in case of error
-- As a user, I want to be able to see my completed page
-- As a user, I want to be able to see the profile's age based on their birthdate
+- As a user, I want to be able to add a new session to my log of sessions
+- As a user, I want to be able to view my overall mastery rate
+- As a user, I want to be able to view a summary of my completed sessions
+- As a user, I want to be able to view my topic efficiency for each study session
