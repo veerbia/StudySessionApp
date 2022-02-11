@@ -5,7 +5,7 @@ As university students, studying is integral to our success. As such, it must be
 sessions, including factors such as their length, efficiency, and time, in order to consistently keep track of our 
 study habits. The study habits that we build in the early years of university form the basis of how we learn for the 
 rest of our lives, and thus, we should see that the foundation is built strong through rigorous tracking of key
-metrics, resources for posterity and optimize our time accordingly.
+metrics, along with documented resources for posterity in order to optimize our time accordingly.
 
 I want to create software that will allow me and my university classmates to document each one of their study 
 sessions and keep a log of all of their sessions with key information about each one.
