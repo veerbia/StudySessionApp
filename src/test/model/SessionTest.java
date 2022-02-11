@@ -20,25 +20,26 @@ class SessionTest {
     @BeforeEach
     void runBefore(){
         testSession1 = new Session("Math", "Number Theory", "Practice 2", 10,
-                9, 1200,1248, "mastered");
+                9, 1200,1248, "mastered", "Day");
         testSession2 = new Session("Computer Science", "Computers", "Text", 20,
-                2, 100,102, "unmastered");
+                2, 100,102, "unmastered", "Day");
         testSession3 = new Session("Finance", "Number Theory", "PDF", 50,
-                40, 234, 244, "mastered");
+                40, 234, 244, "mastered", "Morning");
         testSession4 = new Session("Science", "Numbers", "Book", 10,
-                2, 1302, 1310, "mastered");
+                2, 1302, 1310, "mastered", "Day");
         testSession5 = new Session("Math", "Theory", "Practice 1", 20,
-                18, 1800, 1820, "unmastered");
+                18, 1800, 1820, "unmastered", "Day");
         testSession6 = new Session("Science", "Algebra", "Practice 3", 10,
-                10, 1903, 1906, "mastered");
+                10, 1903, 1906, "mastered", "Day");
         testSession7 = new Session("Math", "Logs", "Practice 4", 100,
-                100, 2000, 2059, "unmastered");
+                100, 2000, 2059, "unmastered", "Night");
+
         testSession8 = new Session("Math", "Logs", "Practice 4", 100,
-                100, 1159, 1159, "unmastered");
+                100, 1159, 1159, "unmastered", "Night");
         testSession9 = new Session("Math", "Logs", "Practice 4", 100,
-                100, 1759, 1759, "unmastered");
+                100, 1759, 1759, "unmastered", "Day");
         testSession10 = new Session("Math", "Logs", "Practice 4", 100,
-                100, 1959, 1959, "unmastered");
+                100, 1959, 1959, "unmastered", "Night");
     }
 
     @Test
@@ -51,46 +52,9 @@ class SessionTest {
         assertEquals(1200, testSession1.getTimeStarted());
         assertEquals(1248, testSession1.getTimeComplete());
         assertEquals("mastered", testSession1.getMastery());
+        assertEquals("Day", testSession1.getTimeOfDay());
     }
 
-    @Test
-    void testTimeOfDayMorningBoundary() {
-        assertEquals("Morning", testSession2.timeOfDay());
-        assertEquals("Morning", testSession8.timeOfDay());
-    }
-
-    @Test
-    void testTimeOfDayMorning() {
-        assertEquals("Morning", testSession3.timeOfDay());
-    }
-
-    @Test
-    void testTimeOfDayAfternoonBoundary() {
-        assertEquals("Afternoon", testSession4.timeOfDay());
-        assertEquals("Afternoon", testSession9.timeOfDay());
-    }
-
-    @Test
-    void testTimeOfDayAfternoon() {
-        assertEquals("Afternoon", testSession1.timeOfDay());
-    }
-
-    @Test
-    void testTimeOfDayEveningBoundary() {
-        assertEquals("Evening", testSession5.timeOfDay());
-        assertEquals("Evening", testSession10.timeOfDay());
-    }
-
-    @Test
-    void testTimeOfDayEvening() {
-        assertEquals("Evening", testSession6.timeOfDay());
-
-    }
-
-    @Test
-    void testTimeOfDayNight() {
-        assertEquals("Night", testSession7.timeOfDay());
-    }
 
     @Test
     void testCorrectToCompleted() {

@@ -12,15 +12,9 @@ public class Session {
     private int timeStarted; // the time problems were started in min
     private int timeComplete; // the time problems were complete in min
     private String mastery; // personal assessment of understanding
+    private String timeOfDay; // time of day when session was completed
 
 
-    // constants
-    private int morningStart = 100;
-    private int morningEnd = 1159;
-    private int afternoonStart = 1200;
-    private int afternoonEnd = 1759;
-    private int eveningStart = 1800;
-    private int eveningEnd = 1959;
 
 
     // REQUIRES: subject is either "Math", "Computer Science", "Finance", or "Science"
@@ -30,9 +24,10 @@ public class Session {
     // and last two digit int 00 <= DD <= 59
     // timeStarted and timeComplete must also be in the same hour (HH) in accordance with Pomodoro principle
     // mastery must be one of either "mastered" or "unmastered"
+    // timeOfDay must be one of "Morning", "Day", "Night"
     // EFFECTS: constructor for Session
     public Session(String subject, String topic, String resource, int totalProblems, int correctProblems,
-                   int timeStarted, int timeComplete, String mastery) {
+                   int timeStarted, int timeComplete, String mastery, String timeOfDay) {
 
         this.subject = subject;
         this.topic = topic;
@@ -42,19 +37,7 @@ public class Session {
         this.timeStarted = timeStarted;
         this.timeComplete = timeComplete;
         this.mastery = mastery;
-    }
-
-    // EFFECTS: gives label for time of day based on time of session in HHMM format
-    public String timeOfDay() {
-        if (timeStarted >= morningStart && timeStarted <= morningEnd) {
-            return "Morning";
-        } else if (timeStarted >= afternoonStart && timeStarted <= afternoonEnd) {
-            return "Afternoon";
-        } else if (timeStarted >= eveningStart && timeStarted <= eveningEnd) {
-            return "Evening";
-        } else {
-            return "Night";
-        }
+        this.timeOfDay = timeOfDay;
     }
 
     // EFFECTS: calculates correct to total problems ratio
@@ -97,6 +80,10 @@ public class Session {
 
     public String getMastery() {
         return mastery;
+    }
+
+    public String getTimeOfDay() {
+        return timeOfDay;
     }
 
 }

@@ -94,9 +94,11 @@ public class StudySessionApp {
         int timeComplete = input.nextInt();
         System.out.println("Do you feel you have mastered the material? ");
         String mastery = input.next();
+        System.out.println("What time of day did you complete this section? ");
+        String timeOfDay = input.next();
 
         Session s = new Session(subject, topic, resource, totalProblems, correctProblems,
-                timeStarted, timeComplete, mastery);
+                timeStarted, timeComplete, mastery, timeOfDay);
 
         sl.addSession(s);
 

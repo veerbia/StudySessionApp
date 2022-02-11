@@ -1,4 +1,4 @@
-# Veer's Project - Personal Wiki
+# Veer's Project - Study Session App
 
 ### Background
 Everyday millions of people around the world lose someone they love dearly.

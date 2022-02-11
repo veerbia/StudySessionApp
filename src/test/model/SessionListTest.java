@@ -24,19 +24,19 @@ public class SessionListTest {
         sl = new SessionList();
 
         testSession1 = new Session("Math", "Number Theory", "Practice 2", 10,
-                9, 1200,1248, "mastered");
+                9, 1200,1248, "mastered", "Day");
         testSession2 = new Session("Computer Science", "Computers", "Text", 20,
-                2, 100,102, "unmastered");
+                2, 100,102, "unmastered", "Day");
         testSession3 = new Session("Finance", "Number Theory", "PDF", 50,
-                40, 234, 244, "mastered");
+                40, 234, 244, "mastered", "Morning");
         testSession4 = new Session("Science", "Numbers", "Book", 10,
-                2, 1302, 1310, "mastered");
+                2, 1302, 1310, "mastered", "Day");
         testSession5 = new Session("Math", "Theory", "Practice 1", 20,
-                18, 1800, 1820, "unmastered");
+                18, 1800, 1820, "unmastered", "Day");
         testSession6 = new Session("Science", "Algebra", "Practice 3", 10,
-                10, 1903, 1906, "mastered");
+                10, 1903, 1906, "mastered", "Day");
         testSession7 = new Session("Math", "Logs", "Practice 4", 100,
-                100, 2000, 2059, "unmastered");
+                100, 2000, 2059, "unmastered", "Night");
     }
 
     @Test
@@ -116,10 +116,10 @@ public class SessionListTest {
                 "using PDF during the Morning. This topic is mastered.";
         sl.addSession(testSession4);
         String testAnswer4 = "This session, you studied Numbers of Science solving 2 correctly out of 10 using Book " +
-                "during the Afternoon. This topic is mastered.";
+                "during the Day. This topic is mastered.";
         sl.addSession(testSession5);
         String testAnswer5 = "This session, you studied Theory of Math solving 18 correctly out of 20 using " +
-                "Practice 1 during the Evening. This topic is unmastered.";
+                "Practice 1 during the Day. This topic is unmastered.";
         List<String> testAnswerList = new ArrayList<>();
         testAnswerList.add(testAnswer3);
         testAnswerList.add(testAnswer4);

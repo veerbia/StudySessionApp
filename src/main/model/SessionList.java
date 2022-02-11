@@ -55,7 +55,7 @@ public class SessionList {
             for (Session s : listOfSession) {
                 summary.add("This session, you studied " + s.getTopic() + " of " + s.getSubject()
                         + " solving " + s.getCorrectProblems() + " correctly out of "
-                        + s.getTotalProblems() + " using " + s.getResource() + " during the " + s.timeOfDay()
+                        + s.getTotalProblems() + " using " + s.getResource() + " during the " + s.getTimeOfDay()
                         + "." + " This topic is " + s.getMastery() + ".");
             }
             return summary;
