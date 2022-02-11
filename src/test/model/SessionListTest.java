@@ -70,11 +70,19 @@ public class SessionListTest {
     }
 
     @Test
-    void testMasteryRateOneMasteredOneUnMastered() {
+    void testMasteryRateTwoMastered() {
+        sl.addSession(testSession1);
+        assertEquals(100, sl.masteryRate());
+        sl.addSession(testSession3);
+        assertEquals(100, sl.masteryRate());
+    }
+
+    @Test
+    void testMasteryRateOneMasteredOneUnmastered() {
         sl.addSession(testSession1);
         assertEquals(100, sl.masteryRate());
         sl.addSession(testSession2);
-        assertEquals(100, sl.masteryRate());
+        assertEquals(50, sl.masteryRate());
     }
 
 
