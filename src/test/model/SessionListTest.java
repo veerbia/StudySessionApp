@@ -70,6 +70,15 @@ public class SessionListTest {
     }
 
     @Test
+    void testMasteryRateOneMasteredOneUnMastered() {
+        sl.addSession(testSession1);
+        assertEquals(100, sl.masteryRate());
+        sl.addSession(testSession2);
+        assertEquals(100, sl.masteryRate());
+    }
+
+
+    @Test
     void testSessionEfficiencyOneSessionAdded() {
         sl.addSession(testSession1);
         double testAnswer1 = 0.0;
