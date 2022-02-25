@@ -1,9 +1,14 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SessionList {
+
+
+public class SessionList implements Writable {
 
     private List<Session> listOfSession;
 
@@ -80,6 +85,10 @@ public class SessionList {
         return unmastered;
     }
 
+    public List<Session> getSessions() {
+        return listOfSession;
+    }
+
     // EFFECTS: returns number of mastered sessions of list of sessions
     public int getMastered() {
         int mastered = 0;
@@ -89,6 +98,25 @@ public class SessionList {
             }
         }
         return mastered;
+    }
+
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("sessions", tradesToJson());
+        return json;
+    }
+
+    // EFFECTS: returns things in this workroom as a JSON array
+    private JSONArray tradesToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Session s : listOfSession) {
+            jsonArray.put(s.toJson());
+        }
+
+        return jsonArray;
     }
 
 }

@@ -1,7 +1,10 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 // Represents a session with details regarding subject, topic. problems, and time
-public class Session {
+public class Session implements Writable {
 
     // fields
     private String subject; // the subject studied in the session
@@ -84,6 +87,21 @@ public class Session {
 
     public String getTimeOfDay() {
         return timeOfDay;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("subject", subject);
+        json.put("topic", topic);
+        json.put("resource", resource);
+        json.put("total problems", totalProblems);
+        json.put("correct problems", correctProblems);
+        json.put("time started", timeStarted);
+        json.put("time complete", timeComplete);
+        json.put("mastery", mastery);
+        json.put("time of day", timeOfDay);
+        return json;
     }
 
 }
