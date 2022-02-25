@@ -26,3 +26,6 @@ summarized history of their sessions in hierarchical order.
 - As a user, I want to be able to view my overall mastery rate
 - As a user, I want to be able to view a summary of my completed sessions
 - As a user, I want to be able to view the efficiency of my topic study for each study session
+- As a user, I want to be able to save a log of my sessions to file
+- As a user, I want to be able to load my log of sessions from file
+
