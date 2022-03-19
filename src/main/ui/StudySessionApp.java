@@ -3,19 +3,33 @@ package ui;
 import model.Session;
 import model.SessionList;
 
+import persistence.JsonReader;
+import persistence.JsonWriter;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
 import java.util.Scanner;
 
 // Code based on CPSC 210 illustration application TellerApp (http://github.students.cs.ubc.ca/CPSC210/TellerApp.git)
 
 public class StudySessionApp {
-    private SessionList sl;
+    private static final String JSON_STORE = "./data/workroom.json";
     private Scanner input;
+    private SessionList lot;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
+
+    private SessionList sl;
 
     // MODIFIES: this
     // EFFECTS: initializes SessionList and Scanner
     private void init() {
+        lot = new SessionList();
         input = new Scanner(System.in);
-        sl = new SessionList();
+        jsonReader = new JsonReader(JSON_STORE);
+        jsonWriter = new JsonWriter(JSON_STORE);
     }
 
     // MODIFIES: this
@@ -34,6 +48,12 @@ public class StudySessionApp {
             case "p":
                 doPrintSessions();
                 break;
+            case "s":
+                saveSessionsList();
+                break;
+            case "l":
+                loadSessionsList();
+                break;
             default:
                 System.out.println("Invalid choice");
                 break;
@@ -42,12 +62,12 @@ public class StudySessionApp {
 
     // EFFECTS: prints all of total sessions completed so far
     private void doPrintSessions() {
-        if (sl.listLength() == 0) {
+        if (lot.listLength() == 0) {
             System.out.println("\nNo Sessions Created.");
         } else {
             System.out.println("\nAll sessions: \n");
-            for (int k = 0; k < sl.listLength(); k++) {
-                System.out.println(sl.viewSession().get(k));
+            for (int k = 0; k < lot.listLength(); k++) {
+                System.out.println(lot.viewSession().get(k));
             }
         }
     }
@@ -55,22 +75,22 @@ public class StudySessionApp {
     // MODIFIES: this
     // EFFECTS: calculates and displays user's mastery rate
     private void doDisplayMasteryRate() {
-        if (sl.getUnmastered() == 0 && sl.getMastered() == 0) {
+        if (lot.getUnmastered() == 0 && lot.getMastered() == 0) {
             System.out.println("\nPlease add your first study session.\n");
         } else {
-            System.out.println("\nMastery rate: " + sl.masteryRate() + " / 100 \n");
+            System.out.println("\nMastery rate: " + lot.masteryRate() + " / 100 \n");
         }
     }
 
     // MODIFIES: this
     // EFFECTS: calculates and displays efficiency of each study session
     private void doDisplayEfficiency() {
-        if (sl.listLength() == 0) {
+        if (lot.listLength() == 0) {
             System.out.println("\nNo Sessions Created.\n");
         } else {
             System.out.println("\nEfficiency of all sessions: \n");
-            for (int i = 0; i < sl.listLength(); i++) {
-                System.out.println(sl.sessionEfficiency().get(i));
+            for (int i = 0; i < lot.listLength(); i++) {
+                System.out.println(lot.sessionEfficiency().get(i));
             }
         }
     }
@@ -100,7 +120,7 @@ public class StudySessionApp {
         Session s = new Session(subject, topic, resource, totalProblems, correctProblems,
                 timeStarted, timeComplete, mastery, timeOfDay);
 
-        sl.addSession(s);
+        lot.addSession(s);
 
         System.out.println("Session successfully added");
     }
@@ -114,6 +134,8 @@ public class StudySessionApp {
         System.out.println("\tm -> View your mastery rate");
         System.out.println("\tp -> See all sessions");
         System.out.println("\td -> Done");
+        System.out.println("\ts -> Save");
+        System.out.println("\tl -> Load");
     }
 
     // MODIFIES: this
@@ -143,6 +165,29 @@ public class StudySessionApp {
     public StudySessionApp() {
         init();
         runApp();
+    }
+
+    // EFFECTS: saves the SessionsList to file
+    private void saveSessionsList() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(lot);
+            jsonWriter.close();
+            System.out.println("Saved to " + JSON_STORE + "\n");
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE + "\n");
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads SessionsList from file
+    private void loadSessionsList() {
+        try {
+            lot = jsonReader.read();
+            System.out.println("Loaded from " + JSON_STORE + "\n");
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE + "\n");
+        }
     }
 
 }
