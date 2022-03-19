@@ -1,0 +1,24 @@
+{"sessions": [
+    {
+        "time complete": 1210,
+        "resource": "text",
+        "subject": "math",
+        "topic": "calculus",
+        "correct problems": 6,
+        "total problems": 12,
+        "time started": 1200,
+        "mastery": "mastered",
+        "time of day": "day"
+    },
+    {
+        "time complete": 1340,
+        "resource": "book",
+        "subject": "science",
+        "topic": "physics",
+        "correct problems": 100,
+        "total problems": 100,
+        "time started": 1300,
+        "mastery": "unmastered",
+        "time of day": "night"
+    }
+]}
