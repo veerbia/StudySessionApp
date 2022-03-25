@@ -27,7 +27,7 @@ public class Session implements Writable {
     // and last two digit int 00 <= DD <= 59
     // timeStarted and timeComplete must also be in the same hour (HH) in accordance with Pomodoro principle
     // mastery must be one of either "mastered" or "unmastered"
-    // timeOfDay must be one of "Morning", "Day", "Night"
+    // timeOfDay must be one of "morning", "day", "night"
     // EFFECTS: constructor for Session
     public Session(String subject, String topic, String resource, int totalProblems, int correctProblems,
                    int timeStarted, int timeComplete, String mastery, String timeOfDay) {

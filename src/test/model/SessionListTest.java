@@ -89,10 +89,8 @@ public class SessionListTest {
     @Test
     void testSessionEfficiencyOneSessionAdded() {
         sl.addSession(testSession1);
-        double testAnswer1 = 0.0;
-        List<Double> testAnswerList = new ArrayList<>();
-        testAnswerList.add(testAnswer1);
-        assertEquals(testAnswerList, sl.sessionEfficiency());
+        int testAnswer1 = 0;
+        assertEquals(testAnswer1, sl.sessionEfficiency());
     }
 
     @Test
@@ -107,7 +105,7 @@ public class SessionListTest {
         testAnswerList.add(testAnswer1);
         testAnswerList.add(testAnswer2);
         testAnswerList.add(testAnswer3);
-        assertEquals(testAnswerList, sl.sessionEfficiency());
+        assertEquals(1, sl.sessionEfficiency());
     }
 
     @Test

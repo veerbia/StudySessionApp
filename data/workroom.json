@@ -1,22 +1,22 @@
 {"sessions": [
     {
-        "time complete": 1230,
-        "resource": "textbook",
+        "time complete": 1204,
+        "resource": "text",
         "subject": "math",
         "topic": "calculus",
-        "correct problems": 50,
+        "correct problems": 100,
         "total problems": 100,
         "time started": 1200,
         "mastery": "mastered",
         "time of day": "day"
     },
     {
-        "time complete": 1230,
-        "resource": "textbooks",
-        "subject": "math",
-        "topic": "calculus2",
-        "correct problems": 80,
-        "total problems": 100,
+        "time complete": 1225,
+        "resource": "text",
+        "subject": "mathematics",
+        "topic": "algebra",
+        "correct problems": 100,
+        "total problems": 90,
         "time started": 1200,
         "mastery": "mastered",
         "time of day": "day"

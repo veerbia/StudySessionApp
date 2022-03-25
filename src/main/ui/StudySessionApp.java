@@ -40,7 +40,7 @@ public class StudySessionApp {
                 doAddNewSession();
                 break;
             case "e":
-                doDisplayEfficiency();
+                // doDisplayEfficiency();
                 break;
             case "m":
                 doDisplayMasteryRate();
@@ -82,18 +82,18 @@ public class StudySessionApp {
         }
     }
 
-    // MODIFIES: this
-    // EFFECTS: calculates and displays efficiency of each study session
-    private void doDisplayEfficiency() {
-        if (lot.listLength() == 0) {
-            System.out.println("\nNo Sessions Created.\n");
-        } else {
-            System.out.println("\nEfficiency of all sessions: \n");
-            for (int i = 0; i < lot.listLength(); i++) {
-                System.out.println(lot.sessionEfficiency().get(i));
-            }
-        }
-    }
+//    // MODIFIES: this
+//    // EFFECTS: calculates and displays efficiency of each study session
+//    private void doDisplayEfficiency() {
+//        if (lot.listLength() == 0) {
+//            System.out.println("\nNo Sessions Created.\n");
+//        } else {
+//            System.out.println("\nEfficiency of all sessions: \n");
+//            for (int i = 0; i < lot.listLength(); i++) {
+//                System.out.println(lot.sessionEfficiency().get(i));
+//            }
+//        }
+//    }
 
     // MODIFIES: this
     // EFFECTS: add new session to session list

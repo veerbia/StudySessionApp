@@ -101,6 +101,8 @@ public class MainApp extends FrameLayout implements ActionListener {
             viewMasteryRate();
         } else if (e.getSource() == displaySessionsButton) {
             displaySessions();
+        } else if (e.getSource() == viewEfficiencyButton) {
+            viewEfficiency();
         } else if (e.getSource() == saveSessionsListButton) {
             saveSessions();
         } else if (e.getSource() == loadSessionsListButton) {
@@ -123,6 +125,7 @@ public class MainApp extends FrameLayout implements ActionListener {
 
         sl.addSession(new Session(subject, topic, resource, totalProblems, correctProblems,
                 timeStarted, timeComplete, mastery, timeOfDay));
+
     }
 
     // MODIFIES: JSON_STORE
@@ -148,12 +151,12 @@ public class MainApp extends FrameLayout implements ActionListener {
         }
     }
 
-//    // EFFECTS: opens new view efficiency frame with text as a parameter
-//    public void viewEfficiency() {
-//        String text = "\nYour efficiency rate from your previous sessions is "
-//                + sl.sessionEfficiency() + ".\n";
-//        new ViewEfficiencyFrame(text, sl.sessionEfficiency() >= 0);
-//    }
+    // EFFECTS: opens new view efficiency frame with text as a parameter
+    public void viewEfficiency() {
+        String text = "\nYour efficiency rate from your previous sessions is "
+                + sl.sessionEfficiency() + "%\n";
+        new ViewEfficiencyFrame(text, sl.sessionEfficiency() >= 30);
+    }
 
     // EFFECTS: opens new view mastery rate frame with text as a parameter
     public void viewMasteryRate() {

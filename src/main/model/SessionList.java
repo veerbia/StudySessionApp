@@ -41,13 +41,17 @@ public class SessionList implements Writable {
 
 
     // EFFECTS: calculates efficiency of sessions in listOfSession
-    public List<Double> sessionEfficiency() {
+    public int sessionEfficiency() {
         List<Double> ratings = new ArrayList<>();
+        int efficiency = 0;
         for (Session s : listOfSession) {
             double temp = s.getCorrectProblems() / s.topicSpeed();
             ratings.add(temp);
         }
-        return ratings;
+        for (double r : ratings) {
+            efficiency += r;
+        }
+        return efficiency / ratings.size();
     }
 
     // EFFECTS: displays summary of information for each session in list
