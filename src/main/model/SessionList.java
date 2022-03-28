@@ -20,6 +20,8 @@ public class SessionList implements Writable {
     // MODIFIES: this
     // EFFECTS: adds session to listOfSession
     public void addSession(Session s) {
+        EventLog.getInstance().logEvent(new Event("A new " + s.getSubject()
+                + " session was added to SessionList"));
         listOfSession.add(s);
     }
 
@@ -35,6 +37,7 @@ public class SessionList implements Writable {
                 unmastered++;
             }
         }
+        EventLog.getInstance().logEvent(new Event("Mastery Rate of SessionList was calculated."));
         return Math.round(mastered / (mastered + unmastered) * 100);
     }
 
@@ -51,11 +54,13 @@ public class SessionList implements Writable {
         for (double r : ratings) {
             efficiency += r;
         }
+        EventLog.getInstance().logEvent(new Event("Session Efficiency of SessionList was calculated."));
         return efficiency / ratings.size();
     }
 
     // EFFECTS: displays summary of information for each session in list
     public List<String> viewSession() {
+        EventLog.getInstance().logEvent(new Event("Summary of SessionList was created."));
         List<String> summary = new ArrayList<>();
 
         if (listOfSession.isEmpty()) {

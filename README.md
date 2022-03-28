@@ -29,3 +29,40 @@ summarized history of their sessions in hierarchical order.
 - As a user, I want to be able to save a log of my sessions to file
 - As a user, I want to be able to load my log of sessions from file
 
+### *Phase 4: Task 2*
+*Sample of events printed to console following program run:* \
+Sun Mar 27 14:06:24 PDT 2022 \
+A new Mathematics session was added to SessionList \
+Sun Mar 27 14:06:38 PDT 2022 \
+A new Science session was added to SessionList \
+Sun Mar 27 14:08:40 PDT 2022 \
+A new Finance session was added to SessionList  
+Sun Mar 27 14:08:43 PDT 2022  
+Session Efficiency of SessionList was calculated. \
+Sun Mar 27 14:08:43 PDT 2022  
+Session Efficiency of SessionList was calculated. \
+Sun Mar 27 14:08:48 PDT 2022 \
+Mastery Rate of SessionList was calculated. \
+Sun Mar 27 14:08:48 PDT 2022 \
+Mastery Rate of SessionList was calculated. \
+Sun Mar 27 14:08:52 PDT 2022  
+Summary of SessionList was created. \
+Sun Mar 27 14:08:52 PDT 2022 \
+Summary of SessionList was created. \
+Sun Mar 27 14:08:52 PDT 2022 \
+Summary of SessionList was created. 
+
+Process finished with exit code 1
+
+### *Phase 4: Task 3*
+- As part of their implementation in the user interface the ViewEfficiencyFrame and ViewMasteryRate classes 
+had a plethora of similarities between them. I would thus create instead an abstract class related to key performance
+tracking and then extended the respective classes to the general abstract class. 
+- To make navigation of the UI package easier, I would add the ButtonPanel, InputFields, and Title classes' components
+directly inside the MainApp class. Having each in the same class allows for easier access to these similar aspects of 
+the user interface and more intuitive understanding of how the components work together, drawing parallels to the
+console-based implementation in the StudySessionApp class.
+- I would also remove any implementations of switch statements such as in the StudySessionApp class as switch
+statements can be difficult to maintain and debug as a project develops over time.
+
+

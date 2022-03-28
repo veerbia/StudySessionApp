@@ -1,9 +1,9 @@
 {"sessions": [
     {
-        "time complete": 1204,
-        "resource": "text",
-        "subject": "math",
-        "topic": "calculus",
+        "time complete": 1220,
+        "resource": "textbook",
+        "subject": "Mathematics",
+        "topic": "Calculus",
         "correct problems": 100,
         "total problems": 100,
         "time started": 1200,
@@ -11,12 +11,23 @@
         "time of day": "day"
     },
     {
-        "time complete": 1225,
-        "resource": "text",
-        "subject": "mathematics",
-        "topic": "algebra",
-        "correct problems": 100,
-        "total problems": 90,
+        "time complete": 1210,
+        "resource": "textbook",
+        "subject": "Science",
+        "topic": "Calculus",
+        "correct problems": 50,
+        "total problems": 50,
+        "time started": 1200,
+        "mastery": "mastered",
+        "time of day": "day"
+    },
+    {
+        "time complete": 1202,
+        "resource": "slides",
+        "subject": "Finance",
+        "topic": "Securities",
+        "correct problems": 10,
+        "total problems": 10,
         "time started": 1200,
         "mastery": "mastered",
         "time of day": "day"
