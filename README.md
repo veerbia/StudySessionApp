@@ -1,4 +1,4 @@
-# Veer's Project - Study Session App
+# Study Session App
 
 ### Background
 As university students, studying is integral to our success. As such, it must be that we keep close track of our study 
